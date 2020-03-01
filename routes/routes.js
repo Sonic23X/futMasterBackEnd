@@ -1,14 +1,20 @@
 'use strict'
 
-var express = require('express');
-var FieldController = require('../controllers/Field.js');
+//requires
+const express = require('express');
+const multipart = require('connect-multiparty');
 
-var router = express.Router();
+//Controllers
+let AuthController = require('../controllers/Auth.js');
 
-//midleware
-var multipart = require('connect-multiparty');
-var multipartMiddleware = multipart({ uploadDir: './uploads' });
+//variable que almacena las rutas
+let router = express.Router();
 
-router.get('/home', FieldController.home);
+//rutas
+router.post('/register', AuthController.register);
+router.post('/login', AuthController.login);
+
+
+
 
 module.exports = router;

@@ -1,12 +1,16 @@
 'use strict'
 
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+let mongoose = require('mongoose');
+let Schema = mongoose.Schema;
 
-var ProjectSchema = Schema({
+let FieldSchema = Schema({
   name: String,
   ubication: String,
   store: Boolean,
+  width: Number,
+  height: Number,
+  created_at: String,
+  deleted: Number
 });
 
-module.exports = mongoose.model('fields', ProjectSchema);
+module.exports = mongoose.model('fields', FieldSchema);

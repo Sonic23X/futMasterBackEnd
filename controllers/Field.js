@@ -1,10 +1,8 @@
 'use strict'
 
-var Field = require('../models/fields');
-var fs = require('fs');
-var path = require('path');
+let Field = require('../models/fields');
 
-var controller =
+let controller =
 {
   home: function(req, res)
   {

@@ -1,14 +1,14 @@
 'use strict'
 
-var express = require('express');
-var bodyParser = require('body-parser');
+const express = require('express');
+const bodyParser = require('body-parser');
 
-var app = express();
+const app = express();
 
 //configuración de rutas
-var app_routers = require('./routes/routes');
+const app_routers = require('./routes/routes');
 
-//middlewares
+//uses
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
