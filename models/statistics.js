@@ -9,7 +9,8 @@ let StatisticsSchema = Schema({
   loses: Number,
   goals: Number,
   assistance: Number,
-  deleted: Number
+  created_at: Date,
+  active: Number
 });
 
 module.exports = mongoose.model('statistics', StatisticsSchema);

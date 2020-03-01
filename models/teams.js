@@ -8,8 +8,8 @@ let TeamSchema = Schema({
   leader: String,
   wins: Number,
   loses: Number,
-  created_at: String,
-  deleted: Number
+  created_at: Date,
+  active: Number
 });
 
 module.exports = mongoose.model('teams', TeamSchema);

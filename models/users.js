@@ -12,7 +12,7 @@ let UserSchema = Schema({
   password: String,
   photo: String,
   type: String,
-  created_at: String,
+  created_at: Date,
   active: Number
 });
 

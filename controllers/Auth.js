@@ -3,7 +3,7 @@
 //requires
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const moment = require('moment');
+const moment = require('moment-timezone');
 
 const User = require('../models/users');
 const configJWT = require('../configs/jwt');
@@ -58,7 +58,7 @@ let controller =
       user.password = password;
       user.photo = null;
       user.type = 'Player';
-      user.created_at = moment().locale('es').format();
+      user.created_at = moment().format();
       user.active = 1;
 
       user.save((err, userStored) => {
