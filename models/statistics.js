@@ -4,11 +4,12 @@ let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
 let StatisticsSchema = Schema({
-  playerId: String,
+  userId: String,
+  rol: String,
   wins: Number,
   loses: Number,
   goals: Number,
-  assistance: Number,
+  assistances: Number,
   created_at: Date,
   active: Number
 });

@@ -8,8 +8,9 @@ const multipart = require('connect-multiparty');
 const Middleware = require('../configs/middlewares');
 
 //Controllers
-let AuthController = require('../controllers/Auth.js');
-let TeamController = require('../controllers/Team.js');
+const AuthController = require('../controllers/Auth.js');
+const TeamController = require('../controllers/Team.js');
+const UserController = require('../controllers/User.js');
 
 //variable que almacena las rutas
 let router = express.Router();
@@ -18,9 +19,15 @@ let router = express.Router();
 router.post('/register', AuthController.register);
 router.post('/login', AuthController.login);
 
-//teams
-router.use(['/team/new'], Middleware.validation);
+//Middleware and routes of team
+router.use(['/team/:id', '/team/new'], Middleware.validation);
+router.get('/team/:id', TeamController.getMyTeam);
 router.post('/team/new', TeamController.createTeam);
+router.put('/team/:id', TeamController.updateTeam);
+router.delete('/team/:id', TeamController.deleteTeam);
 
+//Middleware and routes of user
+router.use(['/home'], Middleware.validation);
+router.get('/home', UserController.home);
 
 module.exports = router;

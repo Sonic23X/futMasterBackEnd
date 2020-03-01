@@ -36,7 +36,7 @@ let controller =
         {
           return res
               .status(401)
-              .send('Password doesn\'t match');
+              .send({message: 'Password doesn\'t match'});
         }
       });
     });

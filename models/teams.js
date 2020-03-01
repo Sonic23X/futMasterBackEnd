@@ -8,6 +8,7 @@ let TeamSchema = Schema({
   leader: String,
   wins: Number,
   loses: Number,
+  photo: String,
   created_at: Date,
   active: Number
 });
