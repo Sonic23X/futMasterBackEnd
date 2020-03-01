@@ -25,7 +25,9 @@ let controller =
         if(result)
         {
           //generar JWT
-          let token = jwt.sign({ id: user._id }, configJWT.key);
+          let token = jwt.sign({ id: user._id }, configJWT.key, {
+            expiresIn: 86400 //24 Hrs.
+          });
 
           return res
               .status(200)
@@ -43,7 +45,7 @@ let controller =
   register: function(req, res)
   {
     let user = new User();
-    var params = req.body;
+    let params = req.body;
 
     //buscar el correo en caso de doble registro (basico)
     User.findOne({email: req.body.email.toLowerCase()}, function(err, user)
